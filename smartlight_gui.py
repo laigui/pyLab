@@ -62,16 +62,25 @@ class PageOne(tk.Frame):
         super().__init__(parent)
 
         style = ttk.Style()
-        style.configure("Lamp.TButton", foreground="green", background="white", width=4)
+        style.configure("Lamp.TButton", foreground="black", background="white", width=6, padding=6)
 
         button1 = ttk.Button(self, text="灯具1", style="Lamp.TButton").grid(row=0, column=0, padx=10, pady=10)
-        button2 = ttk.Button(self, text="灯具2", style="Lamp.TButton").grid(row=0, column=1, padx=10, pady=10)
-        button3 = ttk.Button(self, text="灯具3", style="Lamp.TButton").grid(row=0, column=2, padx=10, pady=10)
-        button4 = ttk.Button(self, text="灯具4", style="Lamp.TButton").grid(row=0, column=3, padx=10, pady=10)
-        button5 = ttk.Button(self, text="灯具5", style="Lamp.TButton").grid(row=0, column=4, padx=10, pady=10)
-        button6 = ttk.Button(self, text="灯具6", style="Lamp.TButton").grid(row=0, column=5, padx=10, pady=10)
-        button7 = ttk.Button(self, text="灯具7", style="Lamp.TButton").grid(row=0, column=6, padx=10, pady=10)
-        button8 = ttk.Button(self, text="灯具8", style="Lamp.TButton").grid(row=0, column=7, padx=10, pady=10)
+        progbar1 = ttk.Progressbar(self, orient="horizontal").grid(row=0, column=1)
+        button2 = ttk.Button(self, text="灯具2", style="Lamp.TButton").grid(row=1, column=0, padx=10, pady=10)
+        progbar2 = ttk.Progressbar(self, orient="horizontal").grid(row=1, column=1)
+        button3 = ttk.Button(self, text="灯具3", style="Lamp.TButton").grid(row=2, column=0, padx=10, pady=10)
+        progbar3 = ttk.Progressbar(self, orient="horizontal").grid(row=2, column=1)
+        button4 = ttk.Button(self, text="灯具4", style="Lamp.TButton").grid(row=3, column=0, padx=10, pady=10)
+        progbar4 = ttk.Progressbar(self, orient="horizontal").grid(row=3, column=1)
+        button5 = ttk.Button(self, text="灯具5", style="Lamp.TButton").grid(row=4, column=0, padx=10, pady=10)
+        progbar5 = ttk.Progressbar(self, orient="horizontal").grid(row=4, column=1)
+        button6 = ttk.Button(self, text="灯具6", style="Lamp.TButton").grid(row=5, column=0, padx=10, pady=10)
+        progbar6 = ttk.Progressbar(self, orient="horizontal").grid(row=5, column=1)
+        button7 = ttk.Button(self, text="灯具7", style="Lamp.TButton").grid(row=6, column=0, padx=10, pady=10)
+        progbar7 = ttk.Progressbar(self, orient="horizontal").grid(row=6, column=1)
+        button8 = ttk.Button(self, text="灯具8", style="Lamp.TButton").grid(row=7, column=0, padx=10, pady=10)
+        progbar8 = ttk.Progressbar(self, orient="horizontal").grid(row=7, column=1)
+
         button0 = ttk.Button(self, text="回到主页", command=lambda: root.show_frame(StartPage)).grid(row=10)
 
 
@@ -80,10 +89,17 @@ class PageTwo(tk.Frame):
 
     def __init__(self, parent, root):
         super().__init__(parent)
-        label = tk.Label(self, text="环境数据检测", font=LARGE_FONT)
-        label.pack(pady=10, padx=10)
 
-        button1 = ttk.Button(self, text="回到主页", command=lambda: root.show_frame(StartPage)).pack()
+        button1 = ttk.Button(self, text="灯具1", style="Lamp.TButton").grid(row=0, column=0, padx=10, pady=10)
+        button2 = ttk.Button(self, text="灯具2", style="Lamp.TButton").grid(row=1, column=0, padx=10, pady=10)
+        button3 = ttk.Button(self, text="灯具3", style="Lamp.TButton").grid(row=2, column=0, padx=10, pady=10)
+        button4 = ttk.Button(self, text="灯具4", style="Lamp.TButton").grid(row=3, column=0, padx=10, pady=10)
+        button5 = ttk.Button(self, text="灯具5", style="Lamp.TButton").grid(row=4, column=0, padx=10, pady=10)
+        button6 = ttk.Button(self, text="灯具6", style="Lamp.TButton").grid(row=5, column=0, padx=10, pady=10)
+        button7 = ttk.Button(self, text="灯具7", style="Lamp.TButton").grid(row=6, column=0, padx=10, pady=10)
+        button8 = ttk.Button(self, text="灯具8", style="Lamp.TButton").grid(row=7, column=0, padx=10, pady=10)
+
+        button0 = ttk.Button(self, text="回到主页", command=lambda: root.show_frame(StartPage)).grid(row=10)
 
 
 class PageThree(tk.Frame):
@@ -91,9 +107,25 @@ class PageThree(tk.Frame):
 
     def __init__(self, parent, root):
         super().__init__(parent)
-        tk.Label(self, text="维修模式", font=LARGE_FONT).pack(pady=10, padx=10)
 
-        button1 = ttk.Button(self, text="回到主页", command=lambda: root.show_frame(StartPage)).pack()
+        button1 = ttk.Button(self, text="灯具1", style="Lamp.TButton").grid(row=0, column=0, padx=10, pady=10)
+        progbar1 = ttk.Scale(self, orient="horizontal").grid(row=0, column=1)
+        button2 = ttk.Button(self, text="灯具2", style="Lamp.TButton").grid(row=1, column=0, padx=10, pady=10)
+        progbar2 = ttk.Scale(self, orient="horizontal").grid(row=1, column=1)
+        button3 = ttk.Button(self, text="灯具3", style="Lamp.TButton").grid(row=2, column=0, padx=10, pady=10)
+        progbar3 = ttk.Scale(self, orient="horizontal").grid(row=2, column=1)
+        button4 = ttk.Button(self, text="灯具4", style="Lamp.TButton").grid(row=3, column=0, padx=10, pady=10)
+        progbar4 = ttk.Scale(self, orient="horizontal").grid(row=3, column=1)
+        button5 = ttk.Button(self, text="灯具5", style="Lamp.TButton").grid(row=4, column=0, padx=10, pady=10)
+        progbar5 = ttk.Scale(self, orient="horizontal").grid(row=4, column=1)
+        button6 = ttk.Button(self, text="灯具6", style="Lamp.TButton").grid(row=5, column=0, padx=10, pady=10)
+        progbar6 = ttk.Scale(self, orient="horizontal").grid(row=5, column=1)
+        button7 = ttk.Button(self, text="灯具7", style="Lamp.TButton").grid(row=6, column=0, padx=10, pady=10)
+        progbar7 = ttk.Scale(self, orient="horizontal").grid(row=6, column=1)
+        button8 = ttk.Button(self, text="灯具8", style="Lamp.TButton").grid(row=7, column=0, padx=10, pady=10)
+        progbar8 = ttk.Scale(self, orient="horizontal").grid(row=7, column=1)
+
+        button1 = ttk.Button(self, text="回到主页", command=lambda: root.show_frame(StartPage)).grid(row=10)
 
 
 if __name__ == '__main__':
