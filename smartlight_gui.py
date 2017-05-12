@@ -3,7 +3,7 @@
 import tkinter as tk
 from tkinter import ttk
 
-LARGE_FONT = ("Verdana", 20)
+LARGE_FONT = ("Verdana", 16)
 
 
 class Application(tk.Tk):
