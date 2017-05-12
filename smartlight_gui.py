@@ -2,6 +2,8 @@
 
 import tkinter as tk
 from tkinter import ttk
+import tkinter.filedialog as filedialog
+
 
 LARGE_FONT = ("Verdana", 16)
 
@@ -23,7 +25,7 @@ class Application(tk.Tk):
         container.grid_columnconfigure(0, weight=1)
 
         self.frames = {}
-        for F in (StartPage, PageOne, PageTwo, PageThree):
+        for F in (StartPage, PageOne, PageTwo, PageThree, PageFour):
             frame = F(container, self)
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")  # 四个页面的位置都是 grid(row=0, column=0), 位置重叠，只有最上面的可见！！
@@ -51,7 +53,7 @@ class StartPage(tk.Frame):
         button5 = ttk.Button(self, text="节能模式二", style="BIG.TButton").grid(row=1, column=1, padx=30, pady=30)
         button6 = ttk.Button(self, text="节能模式三", style="BIG.TButton").grid(row=1, column=2, padx=30, pady=30)
         button7 = ttk.Button(self, text="环境数据检测", style="BIG.TButton", command=lambda: root.show_frame(PageTwo)).grid(row=2, column=0, padx=30, pady=30)
-        button8 = ttk.Button(self, text="系统网络设定", style="BIG.TButton").grid(row=2, column=1, padx=30, pady=30)
+        button8 = ttk.Button(self, text="系统网络设定", style="BIG.TButton", command=lambda: root.show_frame(PageFour)).grid(row=2, column=1, padx=30, pady=30)
         button9 = ttk.Button(self, text="维修模式", style="BIG.TButton", command=lambda: root.show_frame(PageThree)).grid(row=2, column=2, padx=30, pady=30)
 
 
@@ -125,7 +127,29 @@ class PageThree(tk.Frame):
         button8 = ttk.Button(self, text="灯具8", style="Lamp.TButton").grid(row=7, column=0, padx=10, pady=10)
         progbar8 = ttk.Scale(self, orient="horizontal").grid(row=7, column=1)
 
-        button1 = ttk.Button(self, text="回到主页", command=lambda: root.show_frame(StartPage)).grid(row=10)
+        button0 = ttk.Button(self, text="回到主页", command=lambda: root.show_frame(StartPage)).grid(row=10)
+
+
+class PageFour(tk.Frame):
+    '''系统网络设定'''
+
+    def __init__(self, parent, root):
+        super().__init__(parent)
+
+        entry = ttk.Entry(self, width=40)
+        entry.pack(side="top", anchor="nw")
+
+        def callback():
+            entry.delete(0, "end")  # 清空entry里面的内容
+            # 调用filedialog模块的askdirectory()函数去打开文件夹
+            filename = filedialog.askopenfilename()
+            if filename:
+                entry.insert(0, filename)  # 将选择好的文件加入到entry里面
+
+        button1 = ttk.Button(self, text="Open", command=callback)
+        button1.pack(side="top", anchor="nw")
+
+        button2 = ttk.Button(self, text="回到主页", command=lambda: root.show_frame(StartPage)).pack()
 
 
 if __name__ == '__main__':
