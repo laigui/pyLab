@@ -60,10 +60,19 @@ class PageOne(tk.Frame):
 
     def __init__(self, parent, root):
         super().__init__(parent)
-        label = tk.Label(self, text="灯具状态查询", font=LARGE_FONT)
-        label.pack(pady=10, padx=10)
 
-        button1 = ttk.Button(self, text="回到主页", command=lambda: root.show_frame(StartPage)).pack()
+        style = ttk.Style()
+        style.configure("Lamp.TButton", foreground="green", background="white", width=4)
+
+        button1 = ttk.Button(self, text="灯具1", style="Lamp.TButton").grid(row=0, column=0, padx=10, pady=10)
+        button2 = ttk.Button(self, text="灯具2", style="Lamp.TButton").grid(row=0, column=1, padx=10, pady=10)
+        button3 = ttk.Button(self, text="灯具3", style="Lamp.TButton").grid(row=0, column=2, padx=10, pady=10)
+        button4 = ttk.Button(self, text="灯具4", style="Lamp.TButton").grid(row=0, column=3, padx=10, pady=10)
+        button5 = ttk.Button(self, text="灯具5", style="Lamp.TButton").grid(row=0, column=4, padx=10, pady=10)
+        button6 = ttk.Button(self, text="灯具6", style="Lamp.TButton").grid(row=0, column=5, padx=10, pady=10)
+        button7 = ttk.Button(self, text="灯具7", style="Lamp.TButton").grid(row=0, column=6, padx=10, pady=10)
+        button8 = ttk.Button(self, text="灯具8", style="Lamp.TButton").grid(row=0, column=7, padx=10, pady=10)
+        button0 = ttk.Button(self, text="回到主页", command=lambda: root.show_frame(StartPage)).grid(row=10)
 
 
 class PageTwo(tk.Frame):
