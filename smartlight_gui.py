@@ -3,7 +3,7 @@
 import tkinter as tk
 from tkinter import ttk
 
-LARGE_FONT = ("Verdana", 12)
+LARGE_FONT = ("Verdana", 20)
 
 
 class Application(tk.Tk):
@@ -42,7 +42,7 @@ class StartPage(tk.Frame):
         super().__init__(parent)
 
         style = ttk.Style()
-        style.configure("BIG.TButton", foreground="black", background="white", width=14, padding=20)
+        style.configure("BIG.TButton", foreground="black", background="white", font=LARGE_FONT, width=12, padding=20)
 
         button1 = ttk.Button(self, text="灯具全部开", style="BIG.TButton").grid(row=0, column=0, padx=30, pady=30)
         button2 = ttk.Button(self, text="灯具全部关", style="BIG.TButton").grid(row=0, column=1, padx=30, pady=30)
