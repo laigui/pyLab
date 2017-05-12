@@ -15,7 +15,7 @@ class Application(tk.Tk):
     def __init__(self):
         super().__init__()
 
-        self.wm_title("智能路灯测试程序")
+        self.wm_title("智能路灯集控 V1.1       扬州天恒出品")
 
         container = tk.Frame(self)
         container.pack(side="top", fill="both", expand=True)
@@ -40,18 +40,19 @@ class StartPage(tk.Frame):
 
     def __init__(self, parent, root):
         super().__init__(parent)
-        #label = tk.Label(self, text="这里是主页", font=LARGE_FONT)
-        #label.pack(pady=10, padx=10)
 
-        button1 = ttk.Button(self, text="灯具全部开").grid(row=0, column=0)
-        button2 = ttk.Button(self, text="灯具全部关").grid(row=0, column=1)
-        button3 = ttk.Button(self, text="灯具状态查询", command=lambda: root.show_frame(PageOne)).grid(row=0, column=2)
-        button4 = ttk.Button(self, text="节能模式一").grid(row=1, column=0)
-        button5 = ttk.Button(self, text="节能模式二").grid(row=1, column=1)
-        button6 = ttk.Button(self, text="节能模式三").grid(row=1, column=2)
-        button7 = ttk.Button(self, text="环境数据检测", command=lambda: root.show_frame(PageTwo)).grid(row=2, column=0)
-        button8 = ttk.Button(self, text="系统网络设定").grid(row=2, column=1)
-        button9 = ttk.Button(self, text="维修模式", command=lambda: root.show_frame(PageThree)).grid(row=2, column=2)
+        style = ttk.Style()
+        style.configure("BIG.TButton", foreground="black", background="white", width=14, padding=20)
+
+        button1 = ttk.Button(self, text="灯具全部开", style="BIG.TButton").grid(row=0, column=0, padx=30, pady=30)
+        button2 = ttk.Button(self, text="灯具全部关", style="BIG.TButton").grid(row=0, column=1, padx=30, pady=30)
+        button3 = ttk.Button(self, text="灯具状态查询", style="BIG.TButton", command=lambda: root.show_frame(PageOne)).grid(row=0, column=2, padx=30, pady=30)
+        button4 = ttk.Button(self, text="节能模式一", style="BIG.TButton").grid(row=1, column=0, padx=30, pady=30)
+        button5 = ttk.Button(self, text="节能模式二", style="BIG.TButton").grid(row=1, column=1, padx=30, pady=30)
+        button6 = ttk.Button(self, text="节能模式三", style="BIG.TButton").grid(row=1, column=2, padx=30, pady=30)
+        button7 = ttk.Button(self, text="环境数据检测", style="BIG.TButton", command=lambda: root.show_frame(PageTwo)).grid(row=2, column=0, padx=30, pady=30)
+        button8 = ttk.Button(self, text="系统网络设定", style="BIG.TButton").grid(row=2, column=1, padx=30, pady=30)
+        button9 = ttk.Button(self, text="维修模式", style="BIG.TButton", command=lambda: root.show_frame(PageThree)).grid(row=2, column=2, padx=30, pady=30)
 
 
 class PageOne(tk.Frame):
