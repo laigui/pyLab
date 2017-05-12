@@ -89,7 +89,7 @@ class PageThree(tk.Frame):
 if __name__ == '__main__':
     # 实例化Application
     app = Application()
-    #app.geometry('300x300')
+    app.geometry('800x600')
 
     # 主消息循环:
     app.mainloop()
