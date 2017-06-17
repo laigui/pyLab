@@ -21,7 +21,7 @@ def get_latest_log_file():
             ],
             key=lambda i: i[1])[-1]  # 对列表进行排序，排序的依据是每一个元组元素的第二个元素，排序后取最后一个元素
         # 输出排序最新的文件
-        print(file[0])
+        print("The latest file is " + file[0])
         return file[0]
     except IndexError:
         print("no such file in base folder!")
