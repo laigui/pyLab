@@ -35,7 +35,7 @@ class TestParticle(TestCase):
     def test_delta_x_min(self):
         self.fail()
 
-    def test_particle_init():
+    def test_particle_init(self):
         m_p = constants.m_p
         r_p = {'x': 1, 'y': 1, 'z': 53}
         a_p = p.Particle(1, m_p, r_p)
